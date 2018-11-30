@@ -1,12 +1,10 @@
 body{
-  background-color: pink;
+  background-color: black;
 
 }
 
 
 #errorMessages{
-
-  
 
 color:red;
 
@@ -14,9 +12,15 @@ color:red;
 
 h1 { 
    font-size: 100px;
+  color:white;
 }
 
 h2 { 
    font-size: 400px;
   text-align: center;
+  color:white;
 }
+label, legend{
+  color:white;
+}
+
