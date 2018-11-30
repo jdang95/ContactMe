@@ -1,13 +1,10 @@
 function ValidateForm(){
- var validUsername = false;
- var validUserPassword = false;
+
  var validFirstName = false;
  var validLastName = false;
  var validPhone = false;
- var validAddress = false;
  var validEmail = false;
- var validCity = false;
- var validZipCode = false;
+
   
  var letters = /^[A-Za-z]+$/;
  var numbers = /^[0-9]+$/;
@@ -19,25 +16,8 @@ function ValidateForm(){
 //This syntax is using name-of-form.name-of-field.value
 // You can also use document.getElementById("id-of-field").value
 
-/*********** VALIDATES USERNAME ******** */
-  
- if (myContact.username.value.length >= 12 || myContact.username.value===null || myContact.username.value==="" ||  
-!myContact.password.value.match(/^[0-9a-zA-Z]+$/)) 
-    errorMessages += "<p>The username must be less than 12 characters and is required</p>";
- else 
-    validUsername =true;
- //console.log(validUsername);  
-  
 
-  
- /*********** VALIDATES PASSWORD ******** */
- if (myContact.password.value==null ||
- myContact.password.value=== "" ||
- myContact.password.value.length >7 ||  
-!myContact.password.value.match(/^[0-9a-zA-Z]+$/))
- errorMessages += "<p>The password must be less than 7 characters and it is required</p>";
- else
- validUserPassword = true; 
+ 
   
    /*********** VALIDATES FIRSTNAME******** */
  if (myContact.firstname.value==null ||
@@ -74,36 +54,13 @@ function ValidateForm(){
  else
  validPhone = true; 
   
- /*********** VALIDATES ADDRESS******** */
- if (myContact.address.value==null ||
- myContact.address.value=== "" ||
-  !myContact.address.value.match(/^[a-zA-Z\s\d\/]*\d[a-zA-Z\s\d\/]*$/))
- errorMessages += "<p>In Valid Address</p>";
- else
- validAddress = true; 
-  
- /*********** VALIDATES CITY******** */
- if (myContact.city.value==null ||
- myContact.city.value=== "" ||
-  !myContact.city.value.match(letters))
- errorMessages += "<p> City Not Valid</p>";
- else
- validCity = true; 
-  
-  /*********** VALIDATES ZipCode******** */
- if (myContact.zipcode.value==null ||
- myContact.zipcode.value=== "" ||
- myContact.zipcode.value.length >5 ||
-  !myContact.zipcode.value.match(numbers))
- errorMessages += "<p>ZipCode not Valid must be less than 5 characters</p>";
- else
- validZipCode = true; 
+
   
 
   
  document.getElementById("errorMessages").innerHTML = errorMessages;
 // Make sure you return all the boolean variables that are checking each field
- return (validUsername && validUserPassword && validFirstName && validLastName && validPhone && validAddress &&  validCity &&  validZipCode) ;
+ return ( validFirstName && validLastName && validPhone && validEmail) ;
 }
 
 
